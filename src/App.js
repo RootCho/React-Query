@@ -14,6 +14,7 @@ import { RQSuperHeroesPage } from "./components/RQSuperHeroes.page";
 import { HomePage } from "./components/Home.page";
 import ErrorPage from "./error-page";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
 import { TopNav } from "./components/TopNav";
 
 function App() {
@@ -51,21 +52,8 @@ function App() {
     <QueryClientProvider client={queyClient}>
       <RouterProvider router={router}>
         <TopNav />
-        {/* <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/super-heroes">Traditional Super Heroes</Link>
-            </li>
-            <li>
-              <Link to="/rq-super-heroes">RQ Super Heroes</Link>
-            </li>
-          </ul>
-          <Outlet />
-        </nav> */}
       </RouterProvider>
+      <ReactQueryDevtools InitialIsOpen={false} position="bottom-right" />
     </QueryClientProvider>
   );
 }
