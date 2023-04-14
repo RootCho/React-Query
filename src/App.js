@@ -17,6 +17,9 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { TopNav } from "./components/TopNav";
 import { RQSuperHeroPage } from "./components/RQSuperHero.page";
+import { ParallelQueriesPage } from "./components/ParallelQueries.page";
+import { DynamicParallelPage } from "./components/DynamicParallel.page";
+import { DependentQueriesPage } from "./components/DependentQueries.page";
 
 function App() {
   const queyClient = new QueryClient();
@@ -31,6 +34,15 @@ function App() {
         { path: "/super-heroes", element: <SuperHeroesPage /> },
         { path: "/rq-super-heroes", element: <RQSuperHeroesPage /> },
         { path: "/rq-super-heroes/:heroId", element: <RQSuperHeroPage /> },
+        { path: "/rq-parallel", element: <ParallelQueriesPage /> },
+        {
+          path: "/rq-dynamic-parallel",
+          element: <DynamicParallelPage heroIds={[1, 3]} />,
+        },
+        {
+          path: "/rq-dependent",
+          element: <DependentQueriesPage email="visit@example.com" />,
+        },
       ],
     },
     // {
