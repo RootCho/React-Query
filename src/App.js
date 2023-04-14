@@ -16,6 +16,7 @@ import ErrorPage from "./error-page";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { TopNav } from "./components/TopNav";
+import { RQSuperHeroPage } from "./components/RQSuperHero.page";
 
 function App() {
   const queyClient = new QueryClient();
@@ -29,12 +30,16 @@ function App() {
         { index: true, element: <HomePage /> },
         { path: "/super-heroes", element: <SuperHeroesPage /> },
         { path: "/rq-super-heroes", element: <RQSuperHeroesPage /> },
+        { path: "/rq-super-heroes/:heroId", element: <RQSuperHeroPage /> },
       ],
     },
     // {
-    //   path: "/super-heroes",
-    //   element: <SuperHeroesPage />,
+    //   path: "/rq-super-heroes",
+    //   element: null,
     //   errorElement: <ErrorPage />,
+    //   children: [
+    //     { path: "/rq-super-heroes/:heroId", element: <RQSuperHeroPage /> },
+    //   ],
     // },
     // {
     //   path: "/rq-super-heroes",
